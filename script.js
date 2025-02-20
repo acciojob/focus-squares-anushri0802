@@ -1,4 +1,3 @@
-//your JS code here. If required.
 // Select the squares by their IDs
 const square1 = document.getElementById('square1');
 const square2 = document.getElementById('square2');
@@ -31,15 +30,13 @@ square3.addEventListener('mouseover', function() {
     changeColors(square3);
 });
 
-// Optional: Reset colors when the mouse leaves all squares
-square1.addEventListener('mouseout', function() {
-    changeColors(null); // Reset colors back to lavender
-});
+// Optional: Reset colors when the mouse leaves any square
+const resetColors = () => {
+    square1.style.backgroundColor = '#E6E6FA'; // Reset to lavender
+    square2.style.backgroundColor = '#E6E6FA'; // Reset to lavender
+    square3.style.backgroundColor = '#E6E6FA'; // Reset to lavender
+};
 
-square2.addEventListener('mouseout', function() {
-    changeColors(null); // Reset colors back to lavender
-});
-
-square3.addEventListener('mouseout', function() {
-    changeColors(null); // Reset colors back to lavender
-});
+square1.addEventListener('mouseout', resetColors);
+square2.addEventListener('mouseout', resetColors);
+square3.addEventListener('mouseout', resetColors);
